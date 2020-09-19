@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import axios from 'axios'
 import Toolbar from '../components/Navbar/Navbar'
@@ -48,6 +48,12 @@ const TaskManager = (props) => {
     const [curTaskComplete, setCurTaskComplete] = useState('')
     const [curTaskID, setCurTaskID] = useState('')
    
+
+    useEffect(() => {
+        window.onbeforeunload = (e) => {
+            props.history.push('/')
+        }
+    })
 
     // User Information Handlers 
 
@@ -196,7 +202,7 @@ const TaskManager = (props) => {
                     handleUpdateTaskChange={handleUpdateTaskChange}
                     handleUpdatePriorityChange={handleUpdatePriorityChange}
                     handleUpdateCompletedChange={handleUpdateCompletedChange}/>
-            }/>  : <Route path="/" component={Home} />}
+            }/>  : null}
             {isAuth ? <Route path="/application/new" render={(props) => 
                 <NewTask
                     {...props}
@@ -210,7 +216,7 @@ const TaskManager = (props) => {
                     setNewTaskValue={setNewTaskValue}
                     setNewTaskPriority={setNewTaskPriority}
                     setNewTaskCompleted={setNewTaskCompleted}/>
-            }/> : <Route path="/" component={Home} />}
+            }/> : null}
             {isAuth ? <Route path="/application"  render={(props) => 
                 <Application 
                     {...props}  
@@ -223,7 +229,7 @@ const TaskManager = (props) => {
                     setCurTaskPriority={setCurTaskPriority}
                     setCurTaskDesc={setCurTaskDesc}
                     setCurTaskComplete={setCurTaskComplete}
-                    setCurTaskID={setCurTaskID}/>} />: <Route path="/" component={Home} />}
+                    setCurTaskID={setCurTaskID}/>} />: null}
 
             {isAuth ? <Route path="/account/update" render={(props) => 
                 <UpdateAccount 
@@ -236,7 +242,7 @@ const TaskManager = (props) => {
                     setAuthUserEmail={setAuthUserEmail}
                     handleNameChange={handleNameChange}
                     handleEmailChange={handleEmailChange}
-                    handlePasswordChange={handlePasswordChange}/>} /> : <Route path="/" component={Home} />}
+                    handlePasswordChange={handlePasswordChange}/>} /> : null}
             {isAuth ? <Route path="/account" render={(props) => 
                 <Account 
                     {...props}
@@ -248,7 +254,7 @@ const TaskManager = (props) => {
                     showModal={showModal}
                     showModalHandler={showModalHandler}
                     hideModalHandler={hideModalHandler}
-                    readProfileHandler={readProfileHandler}/>} /> : <Route path="/" component={Home} />}
+                    readProfileHandler={readProfileHandler}/>} /> : null}
             <Route path="/" component={Home} />
         </Switch>
         </div>
