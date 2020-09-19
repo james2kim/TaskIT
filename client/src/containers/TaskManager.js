@@ -50,7 +50,7 @@ const TaskManager = (props) => {
    
 
     useEffect(() => {
-        window.onbeforeunload = (e) => {
+        window.onbeforeunload = () => {
             props.history.push('/')
         }
     })
