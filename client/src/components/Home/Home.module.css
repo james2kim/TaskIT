@@ -1,0 +1,92 @@
+.Home {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url('./HomeBackground.jpeg');
+    background-size:cover;
+    background-position:center;
+    font-family:"Lato";
+    font-weight:700;
+    color:white;
+    height:100vh;
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+
+}
+
+.Content{
+    text-align:center;
+    width:30vw;
+    height:42vh;
+	text-shadow:0px 4px 3px rgba(0,0,0,0.4),
+				0px 8px 13px rgba(0,0,0,0.1),
+				0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.Home h1 {
+    font-weight:700;
+    font-size:5vw;
+    margin-bottom: -0.5%;
+}
+
+.Home h3 {
+    font-size:2vw;
+	font-weight: 700;
+}
+
+.Home p {
+    font-weight:700;
+}
+
+.Home hr {
+    width: 18vw;
+}
+
+.Home button {
+    background-color: #fa923f;
+    color: white;
+    padding: 14px 30px;
+    margin: 8px 0;
+    text-decoration: none;
+    outline:none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1vw;
+    width:12vw
+    
+}
+
+.Home button:hover {
+    opacity: 0.7;
+  }
+
+  @media(max-width: 800px) {
+    .Content {
+        width:60vw
+    }
+
+    .Home h1 {
+        font-size: 13.5vw;
+    }
+
+    .Home h3 {
+        font-size: 5vw;
+    }
+
+    .Home p {
+        font-size: 2.5vw;
+    }
+
+    .Home hr {
+        width:45vw
+    }
+
+    .Home button {
+        width:35vw;
+        font-size: 4vw;
+        text-align: center;
+        padding: 8px;
+    }
+}

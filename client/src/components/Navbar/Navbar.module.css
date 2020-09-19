@@ -1,0 +1,43 @@
+.Navbar {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    background-color:  #343a40;
+   
+}
+
+.Navbar Header {
+    margin-right: 4%;
+}
+
+.Navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Navbar li {
+    display: inline-block;
+    margin: 20px;
+}
+
+.Navbar a {
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+}
+
+.Navbar a:hover,
+.Navbar a:active, 
+.Navbar a.active{
+    color:#fa923f
+}
+
+
+@media(max-width: 1000px) {
+    .Navbar {
+        justify-content: center;
+    }
+}

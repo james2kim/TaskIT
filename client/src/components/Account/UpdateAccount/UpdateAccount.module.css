@@ -1,0 +1,60 @@
+.UpdateAccount {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+}
+
+.UpdateAccount  form {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height:35vh;
+    width:23vw;
+}
+
+.UpdateAccount  input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .UpdateAccount  button {
+    background-color: #fa923f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .UpdateAccount  button:hover {
+    opacity: 0.8;
+  }
+
+  .UpdateAccount p {
+    /* text-decoration: underline; */
+    /* cursor: pointer; */
+    margin-top: 1vh;
+}
+
+.Cursor {
+  cursor: pointer;
+  text-decoration: underline;
+  /* text-underline-position: under */
+}
+
+@media(max-width: 800px) {
+  .UpdateAccount {
+    margin-top: 35%;
+  }
+
+  .UpdateAccount form {
+    width:300px
+  }
+}

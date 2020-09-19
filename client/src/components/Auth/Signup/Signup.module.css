@@ -1,0 +1,45 @@
+.Signup {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+}
+
+.Signup form {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height:40vh;
+    width:23vw;
+}
+
+.Signup input[type=email], input[type=password], input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .Signup button {
+    background-color: #fa923f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .Signup button:hover {
+    opacity: 0.8;
+  }
+
+  .Signup p {
+      text-decoration: underline;
+      cursor: pointer;
+      margin-top: 1vh;
+     
+  }

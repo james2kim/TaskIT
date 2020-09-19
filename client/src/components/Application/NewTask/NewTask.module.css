@@ -1,0 +1,76 @@
+.NewTask {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+}
+
+.NewTask h1 {
+    color:#343a40;
+}
+
+.NewTask form {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height:35vh;
+    width:23vw;
+}
+
+.NewTask select {
+    border: 1px solid #ccc;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    color:#343a40;
+    font-weight: 550;
+    opacity: 0.8;
+}
+
+.NewTask input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    padding-left:5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    box-sizing: border-box;
+    color:#343a40;
+  }
+
+  ::placeholder { 
+    color: #343a40;
+    opacity: 0.8;
+  }
+
+  .NewTask button {
+    background-color: #fa923f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .NewTask button:hover {
+    opacity: 0.8;
+  }
+
+  .NewTask p {
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 1vh;
+}
+
+@media(max-width: 800px) {
+    .NewTask {
+      margin-top: 35%;
+    }
+  
+    .NewTask form {
+      width:300px
+    }
+  }
+

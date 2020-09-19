@@ -1,0 +1,65 @@
+.DeleteAccount {
+    position: fixed;
+    z-index: 500;
+    background-color: white;
+    width: 70%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 15%;
+    top: 30%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+}
+
+.DeleteButton {
+    background-color: #B22222;
+    color:white;
+    padding: 14px 30px;
+    margin: 8px 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  
+}
+
+.RevertButton {
+    background-color: #fa923f;
+    color: white;
+    padding: 14px 30px;
+    margin: 8px 0;
+    text-decoration: none;
+   outline:none;
+   border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+.ButtonSpacing{
+    display: flex;
+    justify-content: space-around;
+    width:23vw;
+    margin-top: 4vh;
+}
+
+@media (min-width: 600px) {
+    .DeleteAccount {
+        width: 500px;
+        left: calc(50% - 250px);
+    }
+}
+
+@media(max-width: 800px) {
+    .ButtonSpacing {
+        width:60vw
+    }
+
+    .DeleteButton {
+        padding: 10px 25px 
+    }
+
+    .RevertButton {
+        padding: 10px 25px 
+    }
+}
