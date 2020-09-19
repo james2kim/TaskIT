@@ -147,26 +147,8 @@ const TaskManager = (props) => {
         }
     }
 
-    // Returns the Toolbar and all route handlers for the application
-    return (
-        <div>
-        <Toolbar 
-            isAuth={isAuth} 
-            logoutUserHandler={logoutUserHandler} 
-            readProfileHandler={readProfileHandler}
-            userToken={userToken}
-            {...props}/>
+    let routes = (
         <Switch>
-            <Route 
-                exact
-                path="/"
-                redner={() => {
-                    return (
-                        !isAuth ? 
-                        <Redirect to="/" /> :
-                        <Redirect to="/application" />
-                    )
-                }} />
             <Route path="/login" render={(props) => 
                 <Login 
                     {...props}
@@ -178,8 +160,6 @@ const TaskManager = (props) => {
                     error={error} 
                     setError={setError} 
                     setUserToken={setUserToken}/>} />
-          
-            
             <Route path="/signup" render={(props) => 
                 <Signup 
                     {...props}
@@ -193,74 +173,95 @@ const TaskManager = (props) => {
                     error={error} 
                     setError={setError}
                     setUserToken={setUserToken}/> }/>
-            {isAuth ? <Route path="/application/update" render={(props) => 
-                <UpdateTask 
-                    {...props}
-                    loading={loading}
-                    setLoading={setLoading}
-                    userToken={userToken}
-                    curTaskPriority={curTaskPriority}
-                    curTaskDesc={curTaskDesc}
-                    curTaskComplete={curTaskComplete}
-                    curTaskID={curTaskID}
-                    handleUpdateTaskChange={handleUpdateTaskChange}
-                    handleUpdatePriorityChange={handleUpdatePriorityChange}
-                    handleUpdateCompletedChange={handleUpdateCompletedChange}/>
-            }/>  : null}
-            {isAuth ? <Route path="/application/new" render={(props) => 
-                <NewTask
-                    {...props}
-                    newTaskValue={newTaskValue}
-                    handleNewTaskChange={handleNewTaskChange}
-                    newTaskPriority={newTaskPriority}
-                    handleNewPriorityChange={handleNewPriorityChange}
-                    newTaskCompleted={newTaskCompleted}
-                    handleNewCompletedChange={handleNewCompletedChange}
-                    userToken={userToken} 
-                    setNewTaskValue={setNewTaskValue}
-                    setNewTaskPriority={setNewTaskPriority}
-                    setNewTaskCompleted={setNewTaskCompleted}/>
-            }/> : null}
-            {isAuth ? <Route path="/application"  render={(props) => 
-                <Application 
-                    {...props}  
-                    allCompletedTasks={allCompletedTasks}
-                    setAllCompletedTasks={setAllCompletedTasks}
-                    allIncompleteTasks={allIncompleteTasks}
-                    userToken={userToken}
-                    setAllIncompleteTasks={setAllIncompleteTasks}
-                    setLoading={setLoading}
-                    setCurTaskPriority={setCurTaskPriority}
-                    setCurTaskDesc={setCurTaskDesc}
-                    setCurTaskComplete={setCurTaskComplete}
-                    setCurTaskID={setCurTaskID}/>} />: null}
-
-            {isAuth ? <Route path="/account/update" render={(props) => 
-                <UpdateAccount 
-                    {...props}
-                    nameValue={nameValue}
-                    emailValue={emailValue}
-                    passwordValue={passwordValue}
-                    userToken={userToken}
-                    setAuthUserName={setAuthUserName}
-                    setAuthUserEmail={setAuthUserEmail}
-                    handleNameChange={handleNameChange}
-                    handleEmailChange={handleEmailChange}
-                    handlePasswordChange={handlePasswordChange}/>} /> : null}
-            {isAuth ? <Route path="/account" render={(props) => 
-                <Account 
-                    {...props}
-                    authUserName={authUserName}
-                    authUserEmail={authUserEmail}
-                    userToken={userToken}
-                    authUserPassword={authUserPassword} 
-                    authUserUpdateAt={authUserUpdateAt}
-                    showModal={showModal}
-                    showModalHandler={showModalHandler}
-                    hideModalHandler={hideModalHandler}
-                    readProfileHandler={readProfileHandler}/>} /> : null}
-            <Route path="/" component={Home} />
+             <Route path="/" component={Home} />
+             <Redirect to="/" />
         </Switch>
+    )
+
+    if (isAuth) {
+        routes = (
+            <Switch>
+            <Route path="/application/update" render={(props) => 
+                 <UpdateTask 
+                     {...props}
+                     loading={loading}
+                     setLoading={setLoading}
+                     userToken={userToken}
+                     curTaskPriority={curTaskPriority}
+                     curTaskDesc={curTaskDesc}
+                     curTaskComplete={curTaskComplete}
+                     curTaskID={curTaskID}
+                     handleUpdateTaskChange={handleUpdateTaskChange}
+                     handleUpdatePriorityChange={handleUpdatePriorityChange}
+                     handleUpdateCompletedChange={handleUpdateCompletedChange}/>
+             }/>  
+            <Route path="/application/new" render={(props) => 
+                 <NewTask
+                     {...props}
+                     newTaskValue={newTaskValue}
+                     handleNewTaskChange={handleNewTaskChange}
+                     newTaskPriority={newTaskPriority}
+                     handleNewPriorityChange={handleNewPriorityChange}
+                     newTaskCompleted={newTaskCompleted}
+                     handleNewCompletedChange={handleNewCompletedChange}
+                     userToken={userToken} 
+                     setNewTaskValue={setNewTaskValue}
+                     setNewTaskPriority={setNewTaskPriority}
+                     setNewTaskCompleted={setNewTaskCompleted}/>
+             }/> 
+             <Route path="/application"  render={(props) => 
+                 <Application 
+                     {...props}  
+                     allCompletedTasks={allCompletedTasks}
+                     setAllCompletedTasks={setAllCompletedTasks}
+                     allIncompleteTasks={allIncompleteTasks}
+                     userToken={userToken}
+                     setAllIncompleteTasks={setAllIncompleteTasks}
+                     setLoading={setLoading}
+                     setCurTaskPriority={setCurTaskPriority}
+                     setCurTaskDesc={setCurTaskDesc}
+                     setCurTaskComplete={setCurTaskComplete}
+                     setCurTaskID={setCurTaskID}/>} />
+ 
+            <Route path="/account/update" render={(props) => 
+                 <UpdateAccount 
+                     {...props}
+                     nameValue={nameValue}
+                     emailValue={emailValue}
+                     passwordValue={passwordValue}
+                     userToken={userToken}
+                     setAuthUserName={setAuthUserName}
+                     setAuthUserEmail={setAuthUserEmail}
+                     handleNameChange={handleNameChange}
+                     handleEmailChange={handleEmailChange}
+                     handlePasswordChange={handlePasswordChange}/>} /> 
+             <Route path="/account" render={(props) => 
+                 <Account 
+                     {...props}
+                     authUserName={authUserName}
+                     authUserEmail={authUserEmail}
+                     userToken={userToken}
+                     authUserPassword={authUserPassword} 
+                     authUserUpdateAt={authUserUpdateAt}
+                     showModal={showModal}
+                     showModalHandler={showModalHandler}
+                     hideModalHandler={hideModalHandler}
+                     readProfileHandler={readProfileHandler}/>} /> 
+             <Redirect to="/" />
+         </Switch>
+        )
+    }
+
+    // Returns the Toolbar and all route handlers for the application
+    return (
+        <div>
+        <Toolbar 
+            isAuth={isAuth} 
+            logoutUserHandler={logoutUserHandler} 
+            readProfileHandler={readProfileHandler}
+            userToken={userToken}
+            {...props}/>
+            {routes}
         </div>
     )
 }
