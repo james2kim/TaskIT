@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import axios from 'axios'
 import Toolbar from '../components/Navbar/Navbar'
@@ -48,12 +48,6 @@ const TaskManager = (props) => {
     const [curTaskComplete, setCurTaskComplete] = useState('')
     const [curTaskID, setCurTaskID] = useState('')
    
-
-    useEffect(() => {
-        window.onbeforeunload = () => {
-            props.history.push('/')
-        }
-    })
 
     // User Information Handlers 
 
