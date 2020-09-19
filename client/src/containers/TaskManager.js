@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 import axios from 'axios'
 import Toolbar from '../components/Navbar/Navbar'
 import Home from '../components/Home/Home'
@@ -157,6 +157,16 @@ const TaskManager = (props) => {
             userToken={userToken}
             {...props}/>
         <Switch>
+            <Route 
+                exact
+                path="/"
+                redner={() => {
+                    return (
+                        isAuth ? 
+                        <Redirect to="/" /> :
+                        <Redirect to="/application" />
+                    )
+                }} />
             <Route path="/login" render={(props) => 
                 <Login 
                     {...props}
