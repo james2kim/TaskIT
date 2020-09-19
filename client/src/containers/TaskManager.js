@@ -49,11 +49,11 @@ const TaskManager = (props) => {
     const [curTaskID, setCurTaskID] = useState('')
    
 
-    useEffect(() => {
-        window.onbeforeunload = (e) => {
-            props.history.push('/')
-        }
-    })
+    // useEffect(() => {
+    //     window.onbeforeunload = (e) => {
+    //         props.history.push('/')
+    //     }
+    // })
 
     // User Information Handlers 
 
