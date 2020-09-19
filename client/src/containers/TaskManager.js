@@ -162,7 +162,7 @@ const TaskManager = (props) => {
                 path="/"
                 redner={() => {
                     return (
-                        isAuth ? 
+                        !isAuth ? 
                         <Redirect to="/" /> :
                         <Redirect to="/application" />
                     )
