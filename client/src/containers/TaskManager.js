@@ -196,7 +196,7 @@ const TaskManager = (props) => {
                     handleUpdateTaskChange={handleUpdateTaskChange}
                     handleUpdatePriorityChange={handleUpdatePriorityChange}
                     handleUpdateCompletedChange={handleUpdateCompletedChange}/>
-            }/>  : null}
+            }/>  : <Route path="/" component={Home} />}
             {isAuth ? <Route path="/application/new" render={(props) => 
                 <NewTask
                     {...props}
@@ -210,7 +210,7 @@ const TaskManager = (props) => {
                     setNewTaskValue={setNewTaskValue}
                     setNewTaskPriority={setNewTaskPriority}
                     setNewTaskCompleted={setNewTaskCompleted}/>
-            }/> : null}
+            }/> : <Route path="/" component={Home} />}
             {isAuth ? <Route path="/application"  render={(props) => 
                 <Application 
                     {...props}  
@@ -223,7 +223,7 @@ const TaskManager = (props) => {
                     setCurTaskPriority={setCurTaskPriority}
                     setCurTaskDesc={setCurTaskDesc}
                     setCurTaskComplete={setCurTaskComplete}
-                    setCurTaskID={setCurTaskID}/>} />: null}
+                    setCurTaskID={setCurTaskID}/>} />: <Route path="/" component={Home} />}
 
             {isAuth ? <Route path="/account/update" render={(props) => 
                 <UpdateAccount 
@@ -236,7 +236,7 @@ const TaskManager = (props) => {
                     setAuthUserEmail={setAuthUserEmail}
                     handleNameChange={handleNameChange}
                     handleEmailChange={handleEmailChange}
-                    handlePasswordChange={handlePasswordChange}/>} /> : null}
+                    handlePasswordChange={handlePasswordChange}/>} /> : <Route path="/" component={Home} />}
             {isAuth ? <Route path="/account" render={(props) => 
                 <Account 
                     {...props}
@@ -248,7 +248,7 @@ const TaskManager = (props) => {
                     showModal={showModal}
                     showModalHandler={showModalHandler}
                     hideModalHandler={hideModalHandler}
-                    readProfileHandler={readProfileHandler}/>} /> : null}
+                    readProfileHandler={readProfileHandler}/>} /> : <Route path="/" component={Home} />}
             <Route path="/" component={Home} />
         </Switch>
         </div>
