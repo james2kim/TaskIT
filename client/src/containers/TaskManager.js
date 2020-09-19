@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {Route, Switch, Redirect} from 'react-router-dom'
 import axios from 'axios'
 import Toolbar from '../components/Navbar/Navbar'
@@ -48,6 +48,14 @@ const TaskManager = (props) => {
     const [curTaskComplete, setCurTaskComplete] = useState('')
     const [curTaskID, setCurTaskID] = useState('')
    
+
+    useEffect(() => {
+        if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+          window.location.href = window.location.origin
+        }
+        
+        }, [])
+
 
     // User Information Handlers 
 
