@@ -118,7 +118,6 @@ const TaskManager = (props) => {
                     Authorization: `Bearer ${userToken}`
                 }
             })
-            console.log(response.status)
             setIsAuth(false)
             setUserToken('')
             setEmailValue('')
