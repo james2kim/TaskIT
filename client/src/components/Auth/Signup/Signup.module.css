@@ -43,3 +43,13 @@
       margin-top: 1vh;
      
   }
+
+  @media(max-width: 800px) {
+    .Signup {
+      margin-top: 35%;
+    }
+  
+    .Signup form {
+      width:300px
+    }
+  }
