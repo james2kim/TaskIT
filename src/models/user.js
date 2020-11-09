@@ -36,16 +36,6 @@ const userSchema = new mongoose.Schema({
         }
     },
 
-    // age: {
-    //     type:Number,
-    //     default:0,
-    //     validate(value) {
-    //         if (value < 0) {
-    //             throw new Error('Age must be greater than 0.')
-    //         }
-    //     }
-    // },
-
     tokens: [{
         token: {
             type:String,

@@ -14,7 +14,7 @@ const Account = (props) => {
         try {
                 await Axios({
                 method:'patch',
-                url:'http://localhost:3001/users/me',
+                url:'/users/me',
                 headers: {
                     Authorization: `Bearer ${props.userToken}`
                 },
