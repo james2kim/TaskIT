@@ -15,7 +15,7 @@ const DeleteAccount = (props) => {
         try {
             await axios({
                 method:'delete',
-                url:'http://localhost:3001/users/me',
+                url:'/users/me',
                 headers: {
                     Authorization: `Bearer ${userToken}`
                 }
