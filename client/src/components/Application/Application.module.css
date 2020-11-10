@@ -3,7 +3,8 @@
     text-align: center;
     background: #d5aa88;
     padding-bottom: 10%;
-    padding-top:10%
+    padding-top:10%;
+    min-height: 100vh;
 }
 
 .Application {
