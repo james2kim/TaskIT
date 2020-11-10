@@ -1,7 +1,9 @@
 .Container {
-    margin-top: 7%;
-    margin-bottom: 5%;
+
     text-align: center;
+    background: #d5aa88;
+    padding-bottom: 10%;
+    padding-top:10%
 }
 
 .Application {
@@ -22,6 +24,7 @@
     font-weight: 600;
     box-shadow: 0 2px 3px #ccc;
     transition: transform .2s; 
+    background-color: #f2f3f7
 }
 
 .Update {
@@ -30,9 +33,9 @@
 
 .TaskHeader {
     font-size: 2.5vw;
-    text-decoration-line: underline;
-    text-decoration-color: #fa923f;
-    text-underline-position: under;
+    color:#289fe3;
+    font-weight: bold;
+
 
 }
 
@@ -72,7 +75,7 @@
 
 @media(max-width: 1000px) {
     .Container {
-        margin-top: 25%;
+        padding-top: 25%;
 
     }
 

@@ -146,12 +146,12 @@ const Application = (props) => {
                     { props.allIncompleteTasks ? props.allIncompleteTasks.map((task, index) => {
                     return <div key={task._id} 
                                 className={styles.Task} 
-                                style={{backgroundColor: stylePriorityBackground(task.priority), color:'white' }}>
+                                style={{border: `1px solid ${stylePriorityBackground(task.priority)}`}}>
                                 <p 
                                     className={styles.Trash}
                                     onClick={() => deleteTaskHandler(task._id, task.author)} ><FontAwesomeIcon icon={['fas', 'trash']} /></p>
                                 <p>{task.description}</p>
-                                <p>Priority: {convertPriority(task.priority)}</p>
+                                <p>Priority: <span style={{color: stylePriorityBackground(task.priority)}}>{convertPriority(task.priority)}</span></p>
                                 <p className={styles.Update}>Last Updated: {new Date(task.updatedAt).toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}</p>
                                 <p 
                                     className={styles.Edit}
@@ -162,13 +162,13 @@ const Application = (props) => {
                     <h3 className={styles.TaskHeader}>Completed Tasks</h3>
                     { props.allCompletedTasks ? props.allCompletedTasks.map((task, index) => {
                     return <div key={task._id} 
-                                className={styles.Task} 
-                                style={{backgroundColor:'#7CFC00'}}>
+                                className={styles.Task}
+                                style={{border:'1px solid green'}} >
                                 <p 
                                     className={styles.Trash} 
                                     onClick={() => deleteTaskHandler(task._id, task.author)} ><FontAwesomeIcon icon={['fas', 'trash']} /></p>
                                 <p>{task.description}</p>
-                                <p>Priority: {convertPriority(task.priority)}</p>
+                                <p>Priority: <span style={{color: stylePriorityBackground(task.priority)}}>{convertPriority(task.priority)}</span></p>
                                 <p className={styles.Update}> Last Updated: {new Date(task.updatedAt).toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}</p>
                                 <p 
                                     className={styles.Edit}

@@ -111,7 +111,7 @@ const TaskManager = (props) => {
     // Logout Handler Function 
     const logoutUserHandler = async () => {
         try {
-            const response = await axios({
+            await axios({
                 method:'post',
                 url:'/users/logout',
                 headers: {
